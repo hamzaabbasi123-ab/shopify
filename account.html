@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinô - Classic Streetwear</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+     background-color: #fffbe5;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    width: auto;
+    height: 20px;
+    color: white;
+    padding: 10px;
+}
+
+.social-media a{
+    width: 20px;
+    height: 20px;
+    margin-left: 60px;
+  
+}
+.social-media a img{
+    width: 20px;
+    height: 20px;
+    margin-right: -50px;
+}
+.social-media  p{
+    color: rgb(255, 255, 255);
+    margin-left: 450px;
+    margin-top: -20px;
+    }
+.contact-number{
+    margin-left: 60px;
+}
+
+
+
+/* Store Icon styling */
+/* Store Icon and Text container */
+.store-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-left: 220px;
+}
+
+/* Store Icon styling */
+.store-link img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+/* Store Text styling */
+.store-link p {
+    
+    margin: 0;
+    font-size: 14px;
+    color: #fefefe; /* Customize text color */
+}
+
+
+/* Hidden Store Panel styling */
+.store-panel {
+    position: fixed;
+    overflow: scroll;
+    top: 45px;
+    left: 100%; /* Hidden initially */
+    width: 600px;
+    height: 100%;
+    background-color: #f4f4f4;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+    transition: left 0.4s ease;
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 15px;
+}
+.store-panel h2{
+    font-size: 30px;
+}
+
+/* Active state for sliding in */
+.store-panel.active {
+    left: 540px;
+}
+
+/* Close Button styling */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000000; /* Border for the circle */
+    border-radius: 50%; /* Makes it a circle */
+    font-size: 30px;
+    color: #000000;
+    background-color: transparent; /* Initial background transparent */
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for Close Button */
+.close-btn:hover {
+    background-color: #000000; /* Change background to black on hover */
+    color: #ffffff; /* Change text color to white */
+}
+/* Store Locator Layout */
+.store-locator {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ccc; /* Optional border for styling */
+    border-radius: 10px; /* Optional rounding of edges */
+}
+
+/* Store Image Styling */
+.store-image {
+    width: 150px; /* Adjust as needed */
+    height: 150px; /* Adjust as needed */
+    object-fit: cover; /* Ensures image stays contained in the box */
+    margin-right: 20px; /* Space between image and info */
+    border-radius: 10px; /* Optional rounding of image */
+}
+
+/* Store Info Styling */
+.store-info {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.store-info h3 {
+    margin: 0 0 10px 0;
+}
+
+.store-info p {
+    margin: 5px 0;
+}
+
+/* Email Link Styling */
+.store-info a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.store-info a:hover {
+    text-decoration: underline;
+}
+/* Responsive Media Query for Mobile */
+@media (max-width: 600px) {
+    /* Hide everything except the social-media p tag */
+    .store-link,
+    .contact-number,
+    .social-media a,
+    .currency-lang,
+    .store-panel
+    {
+        display: none; /* Hides these elements on mobile */
+    }
+   
+    /* Show only social-media p */
+    .social-media p {
+        display: flex;
+        margin: 0;
+        padding: 10px;
+        font-size: 12px;
+        margin-left: 50px;
+    }
+    .top-bar{
+        display: flex;
+        margin: 0;
+        width: 100%;
+    }
+}
+       /* Navbar container */
+       .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background-color: transparent;
+        transition: background-color 0.5s ease;
+    }
+
+    /* Logo styling */
+    .navbar img {
+        height: 50px;
+    }
+
+    /* Left side navigation links */
+    .navbar .nav-links {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar .nav-links a {
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: bold;
+        margin-left: 30px;
+        position: relative;
+       
+        z-index: 1000; /* Navbar should be above the background */
+    }
+
+    /* Dropdown menus */
+    .navbar .dropdown {
+        position: relative;
+
+       
+    }
+
+    /* Dropdown menus */
+.navbar .dropdown-content{
+    display: none;
+    position: fixed; /* Make it appear above the page content */
+    background-color: #ffffff;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 9999; /* Ensure it's above all page content */
+    top: 100px; /* Adjust this to place it above the navbar */
+    left: 210px; /* Adjust to your dropdown positioning */
+    margin-top: 2px; /* Adds some space from the navbar */
+}
+
+
+
+    .navbar .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        font-size: 16px;
+    }
+
+    .navbar .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+    /* Show the dropdown on hover */
+    .navbar .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* Right side settings: Search, Login, Cart (with icons) */
+    .navbar .settings {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar .settings a {
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 17px;
+        margin-left: 20px;
+    }
+
+    /* Add some spacing between icons and text */
+    .navbar .settings a i {
+        margin-right: 8px;
+    }
+
+    /* Hover effect for all links */
+    .navbar a:hover {
+        color: #4e4e4e;
+        background-color: #ffffff;
+    }
+
+    .navbar:hover {
+        background-color: #ffffff; /* White background on hover */
+    }
+
+/* Submenu dropdown styling */
+.navbar .dropdown-submenu {
+    position: relative;
+}
+
+.navbar .dropdown-submenu .dropdown-subcontent {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    left: 100%;
+    top: 0;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+   
+}
+
+
+.navbar .dropdown-submenu:hover .dropdown-subcontent {
+    display: block;
+}
+
+/* Main dropdown link hover */
+.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Optional: Add arrows for submenu */
+.navbar .dropdown-submenu > a::after {
+    content: '\f105'; /* Font Awesome right arrow */
+    font-family: 'FontAwesome'; 
+    padding-left: 10px;
+    
+}
+.navbar .dropdown-subcontent a {
+    font-weight: 300; /* Lighter font */
+    font-family: 'Arial', sans-serif; /* Change to desired font */
+    font-size: 14px; /* Adjust font size */
+    color: #333; /* Adjust text color */
+    padding: 10px 16px; /* Adjust padding for better spacing */
+}
+
+    /* Dropdown menus */
+    .navbar .dropdown-content2{
+        display: none;
+        position: fixed; /* Make it appear above the page content */
+        background-color: #ffffff;
+        width: 100%;
+        height: 60%;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 9999; /* Ensure it's above all page content */
+        top: 100px; /* Adjust this to place it above the navbar */
+        left: 0px; /* Adjust to your dropdown positioning */
+        margin-top: 2px; /* Adds some space from the navbar */
+        
+
+    }
+    
+    .navbar .dropdown-content2 a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        font-size: 16px;
+    }
+
+    .navbar .dropdown-content2 a:hover {
+        background-color: #f1f1f1;
+        
+    }
+
+    /* Show the dropdown on hover */
+    .navbar .dropdown:hover .dropdown-content2 {
+                 /* Grid layout for 3 columns */
+         display: grid;
+         grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+         gap: 30px; /* Adjust gap between columns */
+        
+    }
+    .dropdown-section {
+        display: flex;
+        flex-direction: column; /* Ensures items within each section are in a vertical list */
+    }
+    .navbar .dropdown:hover .dropdown-content2 a{
+        font-size: 12px;
+        font-weight: 200;
+    }
+   /* Dropdown menus */
+   .navbar .dropdown-content3{
+    display: none;
+    position: fixed; /* Make it appear above the page content */
+    background-color: #ffffff;
+    width: 100%;
+    height: 60%;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 9999; /* Ensure it's above all page content */
+    top: 100px; /* Adjust this to place it above the navbar */
+    left: 0px; /* Adjust to your dropdown positioning */
+    margin-top: 2px; /* Adds some space from the navbar */
+    
+
+}
+
+.navbar .dropdown-content3 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 16px;
+}
+
+.navbar .dropdown-content3 a:hover {
+    background-color: #f1f1f1;
+    
+}
+
+/* Show the dropdown on hover */
+.navbar .dropdown:hover .dropdown-content3 {
+             /* Grid layout for 3 columns */
+             display: grid;
+             grid-template-columns: repeat(3, 1fr); /* 4 equal columns */
+             gap: 30px; 
+    
+}
+.dropdown-section {
+    display: flex;
+    flex-direction: column; /* Ensures items within each section are in a vertical list */
+}
+.navbar .dropdown:hover .dropdown-content3 a{
+    font-size: 12px;
+    font-weight: 200;
+}
+.dropdown-section img{
+    width: 50%;
+    height: 30%;
+    border-radius: 15px;
+}
+/* Hamburger menu */
+.hamburger-menu {
+    display: none; /* Hidden by default for desktop */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+ .navbar{
+    width: 100%;
+    position: fixed;
+    background-color: #ccc;
+ }
+ .hamburger-menu {
+    display: block; /* Hidden by default for desktop */
+    font-size: 24px;
+    cursor: pointer;
+}
+.logo{
+    margin-left: 20px;
+}
+.navbar .nav-links{
+    display: none;
+}
+.navbar .settings{
+    
+    display: block;
+}
+.navbar .settings a {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+    margin-left: -30px;
+}
+}
+
+
+/* Show hamburger menu and adjust layout for mobile */
+
+/* Menu Page (hidden by default, slides up from the bottom) */
+.menu-page {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 89%;
+    height: 80%;
+    border-radius:25px;
+    background-color: white;
+    z-index: 999;
+    padding: 20px;
+    box-shadow: 0 -12px 26px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease;
+    transform: translateY(100%); /* Initially off-screen */
+}
+
+/* Slide-up animation */
+.menu-page.show {
+    transform: translateY(0); /* Slides the menu into view */
+    display: block; /* Ensure it's visible */
+}
+
+.menu-content {
+    display: flex;
+    justify-content: space-around; /* Space out the menu items horizontally */
+    align-items: left;
+    padding: 20px 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.menu-content a {
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+.menu-content a:hover {
+    color: #555; /* Change color on hover */
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .menu-content {
+        flex-direction: column; /* Stack menu items vertically on mobile */
+    }
+
+    .menu-content a {
+        padding: 15px;
+    }
+    /* Menu content styling */
+.menu-content {
+    display: flex;
+    flex-direction: column; /* Stack menu items vertically */
+    padding: 20px;
+    gap: 15px; /* Space between menu items */
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+}
+.dropdown i{
+    color: #000000;
+    font-size: 12px;
+}
+
+.dropdown-content {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border:  #ccc;
+    border-radius: 15px;
+    position: absolute;
+    margin-left: -10px;
+    top: -130px; /* Positioned below the dropdown link */
+    width: 100%;
+    height: 450px;
+    z-index: 1000;
+}
+.dropdown-content2{
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border:  #ccc;
+    border-radius: 15px;
+    position: absolute;
+    margin-left: -10px;
+    top: -230px; /* Positioned below the dropdown link */
+    width: 100%;
+    height: 450px;
+    z-index: 1000;
+}
+
+ .dropdown-content3{
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border:  #ccc;
+    border-radius: 15px;
+    position: absolute;
+    margin-left: -10px;
+    top: -330px; /* Positioned below the dropdown link */
+    width: 100%;
+    height: 450px;
+    z-index: 1000;
+
+ }
+.dropdown-subcontent a{
+    font-size: 16px;
+    font-weight: 200;
+}
+.dropdown-subcontent{
+    width: 250px;
+    height: 250px;
+    margin-left: -17px;
+   
+}
+.dropdown-submenu a{
+    font-size: 15px;
+
+}
+.dropdown-submenu{
+    width: 500px;
+    margin-left: 10px;
+}
+.dropdown-section a{
+    font-size: 12px;
+    font-weight: 300;
+}
+.dropdown-section h4{
+    font-size: 26px;
+    font-weight: bold;
+}
+
+
+.dropdown:hover .dropdown-content,
+.dropdown:hover .dropdown-content2,
+.dropdown:hover .dropdown-content3 {
+    display: flex;
+}
+
+/* Submenu dropdowns */
+.dropdown-submenu {
+    position: relative;
+}
+.dropdown-section img{
+    width: 70%;
+    height: 50%;
+}
+.dropdown-subcontent {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    left: 0%; /* Positioned to the right of the parent menu */
+    top: 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    z-index: 1000;
+}
+
+.dropdown-submenu:hover .dropdown-subcontent {
+    display: flex;
+}
+.login-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 26px;
+    width: 145px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 25px;
+  }
+  .sociall-media a{
+    width: 20px;
+    height: 20px;
+    margin-left: 60px;
+  
+}
+.sociall-media a img{
+    width: 30px;
+    height: 30px;
+    margin-right: -50px;
+}
+.sociall-media  p{
+    color: rgb(255, 255, 255);
+    margin-left: 450px;
+    margin-top: -20px;
+    }
+}
+/* Close (Cross) button */
+/* Close (Cross) button */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    font-size: 24px;
+    cursor: pointer;
+}
+  .heading h4{
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 450px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }  
+
+  .account-form {
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            margin-left: 100px;
+           
+        }
+        .account-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 30%;
+            height: 30px;
+            padding: 10px;
+            border-radius: 15px;
+            border: 1.3px solid #000000;
+        }
+        .submit-btn {
+            width: 30%;
+            height: 50px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+        .submit-btn:hover {
+            background-color: darkgreen;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .login-link a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+        }
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .account-form {
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            margin-left: 20px;
+           
+        }
+        .form-group input {
+            width: 80%;
+            height: 30px;
+            padding: 10px;
+            border-radius: 15px;
+            border: 1.3px solid #000000;
+        }
+        .heading h4{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 120px;
+    margin-left: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  } 
+  .submit-btn {
+            width: 60%;
+            height: 50px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+        }
+
+        footer {
+    background-color: rgb(16, 16, 21);
+    color: rgb(255, 255, 255);
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px 20px;
+  }
+  
+  .footer-column h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-column ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-column ul li a:hover {
+    color: #ffffff;
+  }
+  
+  .footer-column p {
+    margin-bottom: 10px;
+  }
+  
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #ffffff;
+    margin-top: 20px;
+  }
+  
+  .footer-bottom p {
+    font-size: 14px;
+    color: #ffffff;
+  }
+  .footer-bottom span {
+    color: rgb(255, 255, 255);
+  }
+  .social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-icons a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+  }
+  
+  .social-icons a img:hover {
+    transform: scale(1.2);
+  }
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .footer-column {
+        margin: 20px 0;
+        width: 100%;
+        text-align: center;
+    }
+  
+    .footer-column h3 {
+        font-size: 16px;
+    }
+  
+    .footer-column ul li {
+        margin-bottom: 8px;
+    }
+  
+    .social-icons {
+        gap: 10px;
+    }
+  
+    .social-icons a img {
+        width: 25px;
+        height: 25px;
+    }
+  }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="social-media">
+                <a href="#"><img src="https://th.bing.com/th/id/R.ea56ee89914f22913d2573d029d6a2fa?rik=4xbURp%2bRYYeURw&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9TR%2fLeL%2f9TRLeLz5c.png&ehk=Tr2XPFCHxU%2bGUOzTTGbHA%2fp8J2dXRRrnORkTZp0GaaE%3d&risl=&pid=ImgRaw&r=0" alt="Facebook"></a>
+                <a href="#"><img src="https://th.bing.com/th/id/OIP.fXG3GMCNvp4BYnTHQrplWAHaEK?rs=1&pid=ImgDetMain" alt="Instagram"></a>
+                <a href="#"><img src="https://th.bing.com/th/id/OIP.G3sYK1hKJz1WbVTd840X9QHaHa?rs=1&pid=ImgDetMain" alt="TikTok"></a>
+                <span class="contact-number">0123456780</span>
+                <p>New customers 10% off with WELCOME</p>
+            </div>
+            <a href="#" id="store-icon" onclick="toggleStorePanel()">
+                <div class="store-link">
+                    <img src="https://static.vecteezy.com/system/resources/previews/004/705/198/original/store-icon-design-symbol-market-retail-building-storefront-for-ecommerce-free-vector.jpg" alt="Store" />
+                    <p>Stores</p>
+                </div>
+            </a>
+            
+            <div class="currency-lang">
+                <select id="currency-selector">
+                    <option value="INR">INR</option>
+                    <option value="USD">USD</option>
+                </select>
+            
+                <select id="language-selector">
+                    <option value="EN">English</option>
+                    <option value="FR">French</option>
+                </select>
+            
+                <!-- Store Icon with click action -->
+            </div>
+        </div>
+
+<!-- Hidden Store Panel -->
+<div id="store-panel" class="store-panel">
+    <a href="index.html" class="close-btn">&times;</a>
+    <h2> Store locator</h2>
+    <div class="store-locator">
+        <!-- Store Image -->
+        <img src="https://www.namasteui.com/wp-content/uploads/2020/04/Retail-Stores-768x427.jpg" alt="Fashion Ventura Store" class="store-image">
+    
+        <!-- Store Information -->
+        <div class="store-info">
+            <h3>Fashion Ventura Store</h3>
+            <p>Ottawa street, 39963181</p>
+            <p>S.Main St, Chandigarh</p>
+            <p>+91 154 088-4759</p>
+            <p>mailto:store@email.com</p>
+        </div>
+    </div>
+    
+    <div class="store-locator">
+        <!-- Store Image -->
+        <img src="https://www.namasteui.com/wp-content/uploads/2020/04/Retail-Stores-768x427.jpg" alt="Fashion Ventura Store" class="store-image">
+    
+        <!-- Store Information -->
+        <div class="store-info">
+            <h3>Fashion Ventura Store</h3>
+            <p>Ottawa street, 39963181</p>
+            <p>S.Main St, Chandigarh</p>
+            <p>+91 154 088-4759</p>
+            <p>mailto:store@email.com</p>
+        </div>
+    </div>
+    <div class="store-locator">
+        <!-- Store Image -->
+        <img src="https://www.namasteui.com/wp-content/uploads/2020/04/Retail-Stores-768x427.jpg" alt="Fashion Ventura Store" class="store-image">
+    
+        <!-- Store Information -->
+        <div class="store-info">
+            <h3>Fashion Ventura Store</h3>
+            <p>Ottawa street, 39963181</p>
+            <p>S.Main St, Chandigarh</p>
+            <p>+91 154 088-4759</p>
+            <p>mailto:store@email.com</p>
+        </div>
+    </div>
+</div>
+
+<!-- Hamburger menu for mobile -->
+<div class="navbar">
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="logo"> <img src="logo.png" alt="Website Logo"> <!-- Replace with your logo --></div>
+    <!-- Left side: Logo and navigation links -->
+    <div class="nav-links">
+        <a class="active" href="index.html">Home</a> 
+
+<!-- Shop with dropdown -->
+<div class="dropdown">
+    <a href="#shop">Shop <i class="fas fa-chevron-down"></i></a>
+    <div class="dropdown-content">
+        <!-- Gym Wear dropdown -->
+        <div class="dropdown-submenu">
+            <a href="#">Gym Wear <i class="fas fa-chevron-right"></i></a>
+            <div class="dropdown-subcontent">
+                <a href="#">T-Shirts</a>
+                <a href="#">Shorts</a>
+                <a href="#">Leggings</a>
+                <a href="#">Jackets</a>
+                <a href="#">Tracksuits</a>
+            </div>
+        </div>
+        
+        <!-- Outer Wear dropdown -->
+        <div class="dropdown-submenu">
+            <a href="#">Outer Wear <i class="fas fa-chevron-right"></i></a>
+            <div class="dropdown-subcontent">
+                <a href="#">Jackets</a>
+                <a href="#">Coats</a>
+                <a href="#">Sweatshirts</a>
+                <a href="#">Windbreakers</a>
+                <a href="#">Parkas</a>
+            </div>
+        </div>
+
+        <!-- Inner Wear dropdown -->
+        <div class="dropdown-submenu">
+            <a href="#">Inner Wear <i class="fas fa-chevron-right"></i></a>
+            <div class="dropdown-subcontent">
+                <a href="#">Tanks</a>
+                <a href="#">Sports Bras</a>
+                <a href="#">Compression Wear</a>
+                <a href="#">Base Layers</a>
+                <a href="#">Thermals</a>
+            </div>
+        </div>
+
+        <!-- Hoodies dropdown -->
+        <div class="dropdown-submenu">
+            <a href="#">Hoodies <i class="fas fa-chevron-right"></i></a>
+            <div class="dropdown-subcontent">
+                <a href="#">Pullover</a>
+                <a href="#">Zip-up</a>
+                <a href="#">Lightweight</a>
+                <a href="#">Heavyweight</a>
+                <a href="#">Fleece</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+        <!-- New Arrival with dropdown -->
+<div class="dropdown">
+    <a href="#new-arrival">New Arrival <i class="fas fa-chevron-down"></i></a>
+    <div class="dropdown-content2">
+        
+        <div class="dropdown-section">
+            <h4>Best Sellers</h4>
+            <a href="#">Denim Jean</a>
+            <a href="#">Women Off white T-shirt</a>
+            <a href="#">Women brown sando</a>
+            <a href="#">Shorts with loose T-shirt</a>
+            <a href="#">Women round neck sando</a>
+        </div>
+
+        <!-- Trending -->
+        <div class="dropdown-section">
+            <h4>Trending</h4>
+            <a href="#">Shorts with loose T-shirt</a>
+            <a href="#">Black zipper hoodie</a>
+            <a href="#">Women brown sando</a>
+            <a href="#">Women round neck sando</a>
+            <a href="#">Racerback sports bra</a>
+        </div>
+
+        <!-- New Arrivals -->
+        <div class="dropdown-section">
+            <h4>New Arrivals</h4>
+            <a href="#">Long Coat</a>
+            <a href="#">Black gym suit</a>
+            <a href="#">Women brown sando</a>
+            <a href="#">Black zipper hoodie</a>
+            <a href="#">Women black sando</a>
+        </div>
+
+        <!-- Latest Fashion -->
+        <div class="dropdown-section">
+            <h4>Latest Fashion</h4>
+            <a href="#">Shorts with top</a>
+            <a href="#">Denim Jean</a>
+            <a href="#">Long Coat</a>
+            <a href="#">Women brown sando</a>
+            <a href="#">Black gym suit</a>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Collections with dropdown -->
+        <!-- Collections with dropdown -->
+<div class="dropdown">
+    <a href="#collections">Collections <i class="fas fa-chevron-down"></i></a>
+    <div class="dropdown-content3">
+        <!-- Two columns for the collections -->
+      
+            <!-- First column -->
+            <div class="dropdown-section">
+                <h4>Coord sets</h4>
+                <a href="#">Denim Jean</a>
+                <a href="#">Women brown sando</a>
+                <a href="#">Women round neck sando</a>
+                <a href="#">Black zipper hoodie</a>
+                <a href="#">Black gym suit</a>
+            </div>
+
+            <!-- Second column -->
+            <div class="dropdown-section">
+                <h4>Out Wear</h4>
+                <a href="#">Women black co dress</a>
+                <a href="#">Women Off white T-shirt</a>
+                <a href="#">High rise shorts with top</a>
+                <a href="#">Women black hoodie</a>
+                <a href="#">High waist gym suit for women</a>
+            </div>
+        
+
+        <!-- Two images below the columns -->
+        <div class="dropdown-section">
+            <img src="https://th.bing.com/th/id/OIP.L4B1p8YjA2JyYum6C0AIqwHaE7?rs=1&pid=ImgDetMain" alt="Image 1"> <br>
+            <img src="https://th.bing.com/th/id/R.97973401972832b7c78248041410fbb7?rik=AMdoAqbC6ZGgEQ&pid=ImgRaw&r=0" alt="Image 2">
+        </div>
+    </div>
+</div>
+
+
+        <a href="about.html">About</a>
+    </div>
+
+    <!-- Right side: Icons for Search, Login, Cart -->
+    <div class="settings">
+        <a href="#search"><i class="fas fa-search"></i></a> <!-- Search icon -->
+        <a href="login.html"><i class="fas fa-user"></i></a> <!-- Login icon -->
+        <a href="javascript:void(0);" id="cart-btn">
+            <i class="fas fa-shopping-cart"></i> <!-- Cart icon -->
+        </a>
+    </div>
+</div>
+<!-- Full-Width Menu Page -->
+<div id="menuPage" class="menu-page">
+    <!-- Close (Cross) Button -->
+    <div class="close-button" onclick="toggleMenu()">
+        <i class="fas fa-times"></i>
+    </div>
+
+    <!-- Menu content with dropdowns -->
+    <div class="menu-content">
+        <!-- Dropdown for Shop -->
+        <a class="active" href="index.html">Home</a> 
+        <div class="dropdown">
+            <a href="#shop">Shop <i class="fas fa-chevron-down"></i></a> <br>
+            <div class="dropdown-content">
+                <div class="dropdown-submenu">
+                    <a href="#">Gym Wear <i class="fas fa-chevron-right"></i></a> <br>
+                    <div class="dropdown-subcontent">
+                        <a href="#">T-Shirts</a>
+                        <a href="#">Shorts</a>
+                        <a href="#">Leggings</a>
+                        <a href="#">Jackets</a>
+                        <a href="#">Tracksuits</a>
+                    </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="#">Outer Wear <i class="fas fa-chevron-right"></i></a>
+                    <div class="dropdown-subcontent">
+                        <a href="#">Jackets</a>
+                        <a href="#">Coats</a>
+                        <a href="#">Sweatshirts</a>
+                        <a href="#">Windbreakers</a>
+                        <a href="#">Parkas</a>
+                    </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="#">Inner Wear <i class="fas fa-chevron-right"></i></a>
+                    <div class="dropdown-subcontent">
+                        <a href="#">Tanks</a>
+                        <a href="#">Sports Bras</a>
+                        <a href="#">Compression Wear</a>
+                        <a href="#">Base Layers</a>
+                        <a href="#">Thermals</a>
+                    </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="#">Hoodies <i class="fas fa-chevron-right"></i></a>
+                    <div class="dropdown-subcontent">
+                        <a href="#">Pullover</a>
+                        <a href="#">Zip-up</a>
+                        <a href="#">Lightweight</a>
+                        <a href="#">Heavyweight</a>
+                        <a href="#">Fleece</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dropdown for New Arrival -->
+        <div class="dropdown">
+            <a href="#new-arrival">New Arrival <i class="fas fa-chevron-down"></i></a> 
+            <div class="dropdown-content2">
+                    <div class="dropdown-submenu">
+                        <a href="#">Best Sellers <i class="fas fa-chevron-right"></i></a>
+                        <div class="dropdown-subcontent">
+                    <a href="#">Denim Jean</a>
+                    <a href="#">Women Off white T-shirt</a>
+                    <a href="#">Women brown sando</a>
+                    <a href="#">Shorts with loose T-shirt</a>
+                    <a href="#">Women round neck sando</a>
+                </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="#">Trending <i class="fas fa-chevron-right"></i></a>
+                    <div class="dropdown-subcontent">
+                    <a href="#">Shorts with loose T-shirt</a>
+                    <a href="#">Black zipper hoodie</a>
+                    <a href="#">Women brown sando</a>
+                    <a href="#">Women round neck sando</a>
+                    <a href="#">Racerback sports bra</a>
+                </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="#">New Arrivals <i class="fas fa-chevron-right"></i></a>
+                    <div class="dropdown-subcontent">
+                    <a href="#">Long Coat</a>
+                    <a href="#">Black gym suit</a>
+                    <a href="#">Women brown sando</a>
+                    <a href="#">Black zipper hoodie</a>
+                    <a href="#">Women black sando</a>
+                </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="#">Fashion <i class="fas fa-chevron-right"></i></a>
+                    <div class="dropdown-subcontent">
+                    <a href="#">Shorts with top</a>
+                    <a href="#">Denim Jean</a>
+                    <a href="#">Long Coat</a>
+                    <a href="#">Women brown sando</a>
+                    <a href="#">Black gym suit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dropdown for Collections -->
+        <div class="dropdown">
+            <a href="#collections">Collections <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content3">
+                <div class="dropdown-submenu">
+                    <a href="#">Coored Wear <i class="fas fa-chevron-right"></i></a>
+                    <div class="dropdown-subcontent">
+                    <a href="#">Denim Jean</a>
+                    <a href="#">Women brown sando</a>
+                    <a href="#">Women round neck sando</a>
+                    <a href="#">Black zipper hoodie</a>
+                    <a href="#">Black gym suit</a>
+                </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="#">Out Wear <i class="fas fa-chevron-right"></i></a>
+                    <div class="dropdown-subcontent">
+                    <a href="#">Women black co dress</a>
+                    <a href="#">Women Off white T-shirt</a>
+                    <a href="#">High rise shorts with top</a>
+                    <a href="#">Women black hoodie</a>
+                    <a href="#">High waist gym suit for women</a>
+                </div>
+                </div>
+                <div class="dropdown-section">
+                    <img src="https://th.bing.com/th/id/OIP.L4B1p8YjA2JyYum6C0AIqwHaE7?rs=1&pid=ImgDetMain" alt="Image 1"> <br>
+                    <img src="https://th.bing.com/th/id/R.97973401972832b7c78248041410fbb7?rik=AMdoAqbC6ZGgEQ&pid=ImgRaw&r=0" alt="Image 2">
+                </div>
+            </div>
+        </div>
+        <a href="about.html">About</a>
+        <a href="login.html"><button class="login-btn">login</button></a>
+        <div class="sociall-media">
+            <a href="#"><img src="https://th.bing.com/th/id/R.ea56ee89914f22913d2573d029d6a2fa?rik=4xbURp%2bRYYeURw&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9TR%2fLeL%2f9TRLeLz5c.png&ehk=Tr2XPFCHxU%2bGUOzTTGbHA%2fp8J2dXRRrnORkTZp0GaaE%3d&risl=&pid=ImgRaw&r=0" alt="Facebook"></a>
+            <a href="#"><img src="https://th.bing.com/th/id/OIP.fXG3GMCNvp4BYnTHQrplWAHaEK?rs=1&pid=ImgDetMain" alt="Instagram"></a>
+            <a href="#"><img src="https://th.bing.com/th/id/OIP.G3sYK1hKJz1WbVTd840X9QHaHa?rs=1&pid=ImgDetMain" alt="TikTok"></a>
+        </div>
+    </div>
+</div>
+<div class="heading">
+    <h4> Create an account</h4>
+</div>
+<div class="account-form">
+    <form id="createAccountForm"> <!-- Added ID here -->
+        <div class="form-group">
+            <label for="firstName">First name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="First name" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="Email address" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="submit-btn">Create Account</button>
+    </form>
+    <p id="createMessage" style="color: green;"></p> <!-- Added this for success message -->
+    <div class="login-link">
+        Already have an account? <a href="login.html">Login here</a>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-column">
+            <div class="logo">
+                <img src="logowhite.png" alt="Finloans Logo">
+                
+                
+            </div>
+        
+    </div>
+    
+    <div class="footer-column">
+            
+        <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Gym 3pc suit</a></li>
+                <li><a href="#">Woman black bra</a></li>
+                <li><a href="#">Brown sando</a></li>
+                <li><a href="#">Black hoddie</a></li>
+                <li><a href="#">Shorts with Top</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Support</h3>
+            <ul>
+                <li><a href="#">Our Location</a></li>
+                <li><a href="#">The Hosts</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Contact Info</h3>
+            <p>Address: 98 West 21th Street, Suite 721 New York NY 10016</p>
+            <p>Phone: (+1) 435 3533</p>
+            <p>Email: info@yourdomain.com</p>
+        </div>
+        
+    </div>
+    <div class="footer-bottom">
+        <p>Copyright © 2024 All rights reserved | This template is made with <span> ❤</span> by Shopify</p>
+        
+        <div class="social-icons">
+            <a href="#"><img src="https://th.bing.com/th/id/R.ac7c4437586fd33b6b0f65925408b0ad?rik=6FfGDRFJujUh8g&riu=http%3a%2f%2fwww.newdesignfile.com%2fpostpic%2f2013%2f01%2ffacebook-icon-black-circle_155320.png&ehk=BuMAJhlSegbPE3BBoW22OQEsHZbMWclvDlUgbZjUMGA%3d&risl=&pid=ImgRaw&r=0" alt="Facebook"></a>
+                <a href="#"><img src="https://th.bing.com/th/id/OIP.9_ZXseiaB1tgYquikdl68AHaFj?w=268&h=200&c=7&r=0&o=5&dpr=1.7&pid=1.7" alt="Instagram"></a>
+                <a href="#"><img src="https://th.bing.com/th/id/OIP.VsqHoEuY7p-i84-_MHWGkAHaHw?rs=1&pid=ImgDetMain" alt="YouTube"></a>
+                <a href="#"><img src="https://th.bing.com/th/id/OIP.Vr8DfHIHQWd3rUGnO20uOgHaHa?w=172&h=180&c=7&r=0&o=5&dpr=1.7&pid=1.7" alt="Twitter"></a>
+                <a href="#"><img src="https://th.bing.com/th/id/OIP.eb41Yo7b_b1DPmvsgGqyPgHaHa?w=162&h=180&c=7&r=0&o=5&dpr=1.7&pid=1.7" alt="Indeed"></a>
+            </div>
+        </div>
+    </div>
+    
+</footer>
+<script>
+    document.getElementById('createAccountForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent form submission from reloading the page
+
+    // Retrieve input values
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // Save data to localStorage
+    localStorage.setItem('firstName', firstName);
+    localStorage.setItem('lastName', lastName);
+    localStorage.setItem('email', email);
+    localStorage.setItem('password', password);
+
+    // Display success message
+    document.getElementById('createMessage').innerText = 'Account created successfully!';
+
+    // Redirect to login page after a brief delay
+    setTimeout(function() {
+        window.location.href = 'login.html';
+    }, 1500);
+});
+
+</script>
+<script>
+    document.getElementById('createAccountForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent form submission
+        
+        // Get form data
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        
+        // Save form data to localStorage
+        localStorage.setItem('firstName', firstName);
+        localStorage.setItem('lastName', lastName);
+        localStorage.setItem('email', email);
+        localStorage.setItem('password', password);
+        
+        // Show success message
+        document.getElementById('createMessage').textContent = 'Account created successfully!';
+        
+        // Optionally redirect to another page (e.g., account page)
+        // window.location.href = "myAccount.html";
+    });
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

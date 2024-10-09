@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinô - Classic Streetwear</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="social-media">
+                <a href="#"><img src="https://th.bing.com/th/id/R.ea56ee89914f22913d2573d029d6a2fa?rik=4xbURp%2bRYYeURw&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9TR%2fLeL%2f9TRLeLz5c.png&ehk=Tr2XPFCHxU%2bGUOzTTGbHA%2fp8J2dXRRrnORkTZp0GaaE%3d&risl=&pid=ImgRaw&r=0" alt="Facebook"></a>
+                <a href="#"><img src="https://th.bing.com/th/id/OIP.fXG3GMCNvp4BYnTHQrplWAHaEK?rs=1&pid=ImgDetMain" alt="Instagram"></a>
+                <a href="#"><img src="https://th.bing.com/th/id/OIP.G3sYK1hKJz1WbVTd840X9QHaHa?rs=1&pid=ImgDetMain" alt="TikTok"></a>
+                <span class="contact-number">0123456780</span>
+                <p>New customers 10% off with WELCOME</p>
+            </div>
+            <a href="#" id="store-icon" onclick="toggleStorePanel()">
+                <div class="store-link">
+                    <img src="https://static.vecteezy.com/system/resources/previews/004/705/198/original/store-icon-design-symbol-market-retail-building-storefront-for-ecommerce-free-vector.jpg" alt="Store" />
+                    <p>Stores</p>
+                </div>
+            </a>
+            
+            <div class="currency-lang">
+                <select id="currency-selector">
+                    <option value="INR">INR</option>
+                    <option value="USD">USD</option>
+                </select>
+            
+                <select id="language-selector">
+                    <option value="EN">English</option>
+                    <option value="FR">French</option>
+                </select>
+            
+                <!-- Store Icon with click action -->
+            </div>
+        </div>
+
+<!-- Hidden Store Panel -->
+<div id="store-panel" class="store-panel">
+    <a href="index.html" class="close-btn">&times;</a>
+    <h2> Store locator</h2>
+    <div class="store-locator">
+        <!-- Store Image -->
+        <img src="https://www.namasteui.com/wp-content/uploads/2020/04/Retail-Stores-768x427.jpg" alt="Fashion Ventura Store" class="store-image">
+    
+        <!-- Store Information -->
+        <div class="store-info">
+            <h3>Fashion Ventura Store</h3>
+            <p>Ottawa street, 39963181</p>
+            <p>S.Main St, Chandigarh</p>
+            <p>+91 154 088-4759</p>
+            <p>mailto:store@email.com</p>
+        </div>
+    </div>
+    
+    <div class="store-locator">
+        <!-- Store Image -->
+        <img src="https://www.namasteui.com/wp-content/uploads/2020/04/Retail-Stores-768x427.jpg" alt="Fashion Ventura Store" class="store-image">
+    
+        <!-- Store Information -->
+        <div class="store-info">
+            <h3>Fashion Ventura Store</h3>
+            <p>Ottawa street, 39963181</p>
+            <p>S.Main St, Chandigarh</p>
+            <p>+91 154 088-4759</p>
+            <p>mailto:store@email.com</p>
+        </div>
+    </div>
+    <div class="store-locator">
+        <!-- Store Image -->
+        <img src="https://www.namasteui.com/wp-content/uploads/2020/04/Retail-Stores-768x427.jpg" alt="Fashion Ventura Store" class="store-image">
+    
+        <!-- Store Information -->
+        <div class="store-info">
+            <h3>Fashion Ventura Store</h3>
+            <p>Ottawa street, 39963181</p>
+            <p>S.Main St, Chandigarh</p>
+            <p>+91 154 088-4759</p>
+            <p>mailto:store@email.com</p>
+        </div>
+    </div>
+</div>
+
+<!-- Hamburger menu for mobile -->
+<div class="navbar">
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="logo"> <img src="logo.png" alt="Website Logo"> <!-- Replace with your logo --></div>
+    <!-- Left side: Logo and navigation links -->
+    <div class="nav-links">
+        <a class="active" href="index.html">Home</a> 
+
+<!-- Shop with dropdown -->
+<div class="dropdown">
+    <a href="#shop">Shop <i class="fas fa-chevron-down"></i></a>
+    <div class="dropdown-content">
+        <!-- Gym Wear dropdown -->
+        <div class="dropdown-submenu">
+            <a href="#">Gym Wear <i class="fas fa-chevron-right"></i></a>
+            <div class="dropdown-subcontent">
+                <a href="#product-section">Sports-bra</a>
+                <a href="#product-section">Black gym suit</a>
+                <a href="#product-section">Shorts</a>
+                <a href="allproducts.html">Shorts with top</a>
+                <a href="allproducts.html">Tracksuits</a>
+            </div>
+        </div>
+        
+        <!-- Outer Wear dropdown -->
+        <div class="dropdown-submenu">
+            <a href="#">Outer Wear <i class="fas fa-chevron-right"></i></a>
+            <div class="dropdown-subcontent">
+                <a href="allproducts.html">Jackets</a>
+                <a href="allproducts.html">Coats</a>
+                <a href="allproducts.html">Sweatshirts</a>
+                <a href="allproducts.html">Windbreakers</a>
+                <a href="allproducts.html">Parkas</a>
+            </div>
+        </div>
+
+        <!-- Inner Wear dropdown -->
+        <div class="dropdown-submenu">
+            <a href="#">Inner Wear <i class="fas fa-chevron-right"></i></a>
+            <div class="dropdown-subcontent">
+                <a href="allproducts.html">Tanks</a>
+                <a href="allproducts.html">Sports Bras</a>
+                <a href="allproducts.html">Compression Wear</a>
+                <a href="allproducts.html">Base Layers</a>
+                <a href="allproducts.html">Thermals</a>
+            </div>
+        </div>
+
+        <!-- Hoodies dropdown -->
+        <div class="dropdown-submenu">
+            <a href="#">Hoodies <i class="fas fa-chevron-right"></i></a>
+            <div class="dropdown-subcontent">
+                <a href="allproducts.html">Pullover</a>
+                <a href="allproducts.html">Zip-up</a>
+                <a href="allproducts.html">Lightweight</a>
+                <a href="allproducts.html">Heavyweight</a>
+                <a href="allproducts.html">Fleece</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+        <!-- New Arrival with dropdown -->
+<div class="dropdown">
+    <a href="#new-arrival">New Arrival <i class="fas fa-chevron-down"></i></a>
+    <div class="dropdown-content2">
+        
+        <div class="dropdown-section">
+            <h4>Best Sellers</h4>
+            <a href="allproducts.html">Denim Jean</a>
+            <a href="allproducts.html">Women Off white T-shirt</a>
+            <a href="allproducts.html">Women brown sando</a>
+            <a href="allproducts.html">Shorts with loose T-shirt</a>
+            <a href="allproducts.html">Women round neck sando</a>
+        </div>
+
+        <!-- Trending -->
+        <div class="dropdown-section">
+            <h4>Trending</h4>
+            <a href="allproducts.html">Shorts with loose T-shirt</a>
+            <a href="allproducts.html">Black zipper hoodie</a>
+            <a href="allproducts.html">Women brown sando</a>
+            <a href="allproducts.html">Women round neck sando</a>
+            <a href="#product-section">Racerback sports bra</a>
+        </div>
+
+        <!-- New Arrivals -->
+        <div class="dropdown-section">
+            <h4>New Arrivals</h4>
+            <a href="allproducts.html">Long Coat</a>
+            <a href="#product-section">Black gym suit</a>
+            <a href="allproducts.html">Women brown sando</a>
+            <a href="allproducts.html">Black zipper hoodie</a>
+            <a href="#product-section">Women black sando</a>
+        </div>
+
+        <!-- Latest Fashion -->
+        <div class="dropdown-section">
+            <h4>Latest Fashion</h4>
+            <a href="#product-section">Shorts with top</a>
+            <a href="allproducts.html">Denim Jean</a>
+            <a href="allproducts.html">Long Coat</a>
+            <a href="allproducts.html">Women brown sando</a>
+            <a href="#product-section">Black gym suit</a>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Collections with dropdown -->
+        <!-- Collections with dropdown -->
+<div class="dropdown">
+    <a href="#collections">Collections <i class="fas fa-chevron-down"></i></a>
+    <div class="dropdown-content3">
+        <!-- Two columns for the collections -->
+      
+            <!-- First column -->
+            <div class="dropdown-section">
+                <h4>Coord sets</h4>
+                <a href="allproducts.html">Denim Jean</a>
+                <a href="allproducts.html">Women brown sando</a>
+                <a href="allproducts.html">Women round neck sando</a>
+                <a href="allproducts.html">Black zipper hoodie</a>
+                <a href="#product-section">Black gym suit</a>
+            </div>
+
+            <!-- Second column -->
+            <div class="dropdown-section">
+                <h4>Out Wear</h4>
+                <a href="allproducts.html">Women black co dress</a>
+                <a href="allproducts.html">Women Off white T-shirt</a>
+                <a href="#product-section">High rise shorts with top</a>
+                <a href="allproducts.html">Women black hoodie</a>
+                <a href="#product-section">High waist gym suit for women</a>
+            </div>
+        
+
+        <!-- Two images below the columns -->
+        <div class="dropdown-section">
+            <img src="https://th.bing.com/th/id/OIP.L4B1p8YjA2JyYum6C0AIqwHaE7?rs=1&pid=ImgDetMain" alt="Image 1"> <br>
+            <img src="https://th.bing.com/th/id/R.97973401972832b7c78248041410fbb7?rik=AMdoAqbC6ZGgEQ&pid=ImgRaw&r=0" alt="Image 2">
+        </div>
+    </div>
+</div>
+
+
+        <a href="#about">About</a>
+    </div>
+
+    <!-- Right side: Icons for Search, Login, Cart -->
+    <div class="settings">
+        <a href="#search"><i class="fas fa-search"></i></a> <!-- Search icon -->
+        <a href="login.html"><i class="fas fa-user"></i></a> <!-- Login icon -->
+        <a href="javascript:void(0);" id="cart-btn">
+            <i class="fas fa-shopping-cart"></i> <!-- Cart icon -->
+        </a>
+    </div>
+</div>
+<!-- Full-Width Menu Page -->
+
+<!-- Menu content with dropdowns -->
+<div class="menu-content">
+    <div id="menuPage" class="menu-page">
+        <!-- Close (Cross) Button -->
+        <div class="close-button" onclick="toggleMenu()">
+            <i class="fas fa-times"></i>
+        </div>
+        <!-- Dropdown for Shop -->
+        <a class="active" href="index.html">Home</a> 
+        <div class="dropdown">
+            <a href="#shop">Shop <i class="fas fa-chevron-down"></i></a> <br>
+            <div class="dropdown-content">
+                <div class="dropdown-submenu">
+                    <a href="#">Gym Wear <i class="fas fa-chevron-right"></i></a> <br>
+                    <div class="dropdown-subcontent">
+                        <a href="allproducts.html">T-Shirts</a>
+                        <a href="allproducts.html">Shorts</a>
+                        <a href="allproducts.html">Leggings</a>
+                        <a href="allproducts.html">Jackets</a>
+                        <a href="allproducts.html">Tracksuits</a>
+                    </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="#">Outer Wear <i class="fas fa-chevron-right"></i></a>
+                    <div class="dropdown-subcontent">
+                        <a href="allproducts.html">Jackets</a>
+                        <a href="allproducts.html">Coats</a>
+                        <a href="allproducts.html">Sweatshirts</a>
+                        <a href="allproducts.html">Windbreakers</a>
+                        <a href="allproducts.html">Parkas</a>
+                    </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="#">Inner Wear <i class="fas fa-chevron-right"></i></a>
+                    <div class="dropdown-subcontent">
+                        <a href="allproducts.html">Tanks</a>
+                        <a href="allproducts.html">Sports Bras</a>
+                        <a href="allproducts.html">Compression Wear</a>
+                        <a href="allproducts.html">Base Layers</a>
+                        <a href="allproducts.html">Thermals</a>
+                    </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="#">Hoodies <i class="fas fa-chevron-right"></i></a>
+                    <div class="dropdown-subcontent">
+                        <a href="allproducts.html">Pullover</a>
+                        <a href="allproducts.html">Zip-up</a>
+                        <a href="allproducts.html">Lightweight</a>
+                        <a href="allproducts.html">Heavyweight</a>
+                        <a href="allproducts.html">Fleece</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dropdown for New Arrival -->
+        <div class="dropdown">
+            <a href="#new-arrival">New Arrival <i class="fas fa-chevron-down"></i></a> <br>
+            <div class="dropdown-content2">
+                    <div class="dropdown-submenu">
+                        <a href="#">Best Sellers <i class="fas fa-chevron-right"></i></a>
+                        <div class="dropdown-subcontent">
+                    <a href="allproducts.html">Denim Jean</a>
+                    <a href="allproducts.html">Women Off white T-shirt</a>
+                    <a href="allproducts.html">Women brown sando</a>
+                    <a href="allproducts.html">Shorts with loose T-shirt</a>
+                    <a href="allproducts.html">Women round neck sando</a>
+                </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="#">Trending <i class="fas fa-chevron-right"></i></a>
+                    <div class="dropdown-subcontent">
+                    <a href="allproducts.html">Shorts with loose T-shirt</a>
+                    <a href="allproducts.html">Black zipper hoodie</a>
+                    <a href="allproducts.html">Women brown sando</a>
+                    <a href="allproducts.html">Women round neck sando</a>
+                    <a href="#product-section">Racerback sports bra</a>
+                </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="#">New Arrivals <i class="fas fa-chevron-right"></i></a>
+                    <div class="dropdown-subcontent">
+                    <a href="allproducts.html">Long Coat</a>
+                    <a href="#product-section">Black gym suit</a>
+                    <a href="allproducts.html">Women brown sando</a>
+                    <a href="allproducts.html">Black zipper hoodie</a>
+                    <a href="#product-section">Women black sando</a>
+                </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="#">Fashion <i class="fas fa-chevron-right"></i></a>
+                    <div class="dropdown-subcontent">
+                    <a href="#product-section">Shorts with top</a>
+                    <a href="allproducts.html">Denim Jean</a>
+                    <a href="allproducts.html">Long Coat</a>
+                    <a href="allproducts.html">Women brown sando</a>
+                    <a href="#product-section">Black gym suit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dropdown for Collections -->
+        <div class="dropdown">
+            <a href="#collections">Collections <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content3">
+                <div class="dropdown-submenu">
+                    <a href="#">Coored Wear <i class="fas fa-chevron-right"></i></a>
+                    <div class="dropdown-subcontent">
+                    <a href="allproducts.html">Denim Jean</a>
+                    <a href="allproducts.html">Women brown sando</a>
+                    <a href="allproducts.html">Women round neck sando</a>
+                    <a href="allproducts.html">Black zipper hoodie</a>
+                    <a href="#product-section">Black gym suit</a>
+                </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="#">Out Wear <i class="fas fa-chevron-right"></i></a>
+                    <div class="dropdown-subcontent">
+                    <a href="allproducts.html">Women black co dress</a>
+                    <a href="allproducts.html">Women Off white T-shirt</a>
+                    <a href="#product-section">High rise shorts with top</a>
+                    <a href="allproducts.html">Women black hoodie</a>
+                    <a href="#product-section">High waist gym suit for women</a>
+                </div>
+            </div>
+                <div class="dropdown-section">
+                    <img src="https://th.bing.com/th/id/OIP.L4B1p8YjA2JyYum6C0AIqwHaE7?rs=1&pid=ImgDetMain" alt="Image 1"> <br>
+                    <img src="https://th.bing.com/th/id/R.97973401972832b7c78248041410fbb7?rik=AMdoAqbC6ZGgEQ&pid=ImgRaw&r=0" alt="Image 2">
+                </div>
+            </div>
+        </div>
+        <a href="#about">About</a> <br>
+        <a href="login.html"><button class="login-btn">login</button></a>
+       
+        <div class="sociall-media">
+            <a href="#"><img src="https://th.bing.com/th/id/R.ea56ee89914f22913d2573d029d6a2fa?rik=4xbURp%2bRYYeURw&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9TR%2fLeL%2f9TRLeLz5c.png&ehk=Tr2XPFCHxU%2bGUOzTTGbHA%2fp8J2dXRRrnORkTZp0GaaE%3d&risl=&pid=ImgRaw&r=0" alt="Facebook"></a>
+            <a href="#"><img src="https://th.bing.com/th/id/OIP.fXG3GMCNvp4BYnTHQrplWAHaEK?rs=1&pid=ImgDetMain" alt="Instagram"></a>
+            <a href="#"><img src="https://th.bing.com/th/id/OIP.G3sYK1hKJz1WbVTd840X9QHaHa?rs=1&pid=ImgDetMain" alt="TikTok"></a>
+        </div>
+    </div>
+</div>
+<div class="main-page">
+    <div class="content-overlay">
+        <p>Our goal is to build lasting relationships with our customers through integrity,<br>
+            excellence, and a relentless pursuit of improvement.</p>
+        <h4>Our </h4>
+        <h2>Mission</h2>
+        
+    </div>
+</div>
+
+<!-- New Arrival Section -->
+<div class="new-arrival-section">
+    <h2>New Arrivals</h2>
+    
+    <div class="arrival-gallery">
+        <!-- First Image -->
+        <div class="arrival-item">
+            <img src="https://th.bing.com/th/id/R.5b4430ae4cb90d2ca65b818277435fc4?rik=OeFd8XBkt8QQ5Q&pid=ImgRaw&r=0" alt="Arrival Item 1">
+        </div>
+
+        <!-- Second Image -->
+        <div class="arrival-item">
+            <img src="https://th.bing.com/th/id/R.d0011b7c3274e743c941f999dd9c078f?rik=Nnfc8jEZitVe%2bw&pid=ImgRaw&r=0" alt="Arrival Item 2">
+        </div>
+
+        <!-- Third Image -->
+        <div class="arrival-item">
+            <img src="https://th.bing.com/th/id/R.499ea0d39676fa2e5494f6a8ae845abb?rik=%2b5i%2bKIpSjn%2fh4w&pid=ImgRaw&r=0" alt="Arrival Item 3">
+        </div>
+
+        <!-- Text Section -->
+        <div class="arrival-text">
+            <h3>Everyday Essentials</h3> <br>
+            <p>Each item is thoughtfully designed to blend comfort with versatility, making them perfect for any occasion.</p>
+            <a href="shop.html" class="shop-btn">SHOP NOW</a>
+        </div>
+    </div>
+</div>
+<!-- BUY MORE, SAVE MORE Section -->
+<div class="buy-more-save-more-section">
+    <h2>BUY MORE, SAVE MORE</h2>
+
+    <div class="save-more-buttons">
+        <a href="new-arrivals.html" class="save-btn">New Arrivals</a>
+        <a href="jeans.html" class="save-btn">Jeans Collection</a>
+        <a href="coord-sets.html" class="save-btn">Coord Sets</a>
+        <a href="shop.html" class="save-btn">latest brands</a>
+        <a href="new-arrivals.html" class="save-btn">chic style</a>
+        <a href="jeans.html" class="save-btn">sneakers</a>
+        <a href="coord-sets.html" class="save-btn">Coord Sets</a>
+        <a href="shop.html" class="save-btn">Smart watches</a>
+    </div>
+</div>
+<!-- Cart Button -->
+
+<!-- Cart Button (Cart Icon) -->
+
+
+<!-- Cart Section (initially hidden) -->
+<div class="cart" style="right: -1100px;"> <!-- Adjusted for CSS sliding -->
+    <h2>Your Cart</h2>
+    <div class="cart-items">
+        <!-- Dynamically added items will appear here -->
+    </div>
+    <div class="cart-total">
+        <h3>Total Price: $<span id="cart-total">0</span></h3>
+        <a href="index.html">
+            <button id="checkout-btn">Checkout</button>
+        </a>
+    </div>
+</div>
+
+
+
+<section class="support-resources-section">
+    <h2>SUPPORT & RESOURCES</h2>
+    <div class="support-resources-gallery">
+        <div class="support-item">
+            <div class="support-icon">
+                <img src="https://th.bing.com/th/id/OIP.z49ccc87pejEJ1aR4M7S4AHaHa?rs=1&pid=ImgDetMain" alt="Free Shipping Icon">
+            </div>
+            <h3>Free Shipping</h3>
+            <p>We are committed to getting your products 
+                 to you quickly & without any additional cost.</p>
+        </div>
+        <div class="support-item">
+            <div class="support-icon">
+                <img src="https://th.bing.com/th/id/OIP.7owQZvT0_adHcXIFyP8w9AHaJI?rs=1&pid=ImgDetMain" alt="Secure Payment Icon">
+            </div>
+            <h3>100% Secure</h3>
+            <p>Your payment information is protected with our 100% Secured Payments system with us.</p>
+        </div>
+        <div class="support-item">
+            <div class="support-icon">
+                <img src="https://th.bing.com/th/id/OIP.VRmVbEU2qjIn-dJKfIdLyQHaF3?w=981&h=778&rs=1&pid=ImgDetMain" alt="Returns Icon">
+            </div>
+            <h3>30-days Returns</h3>
+            <p>We provide a risk-free shopping experience with our Easy 30-Day Return guarantee.</p>
+        </div>
+        <div class="support-item">
+            <div class="support-icon">
+                <img src="https://th.bing.com/th/id/R.7e461a5394b81f5d848996bcc9c60288?rik=gM%2bwGugWES98Nw&pid=ImgRaw&r=0" alt="Chat Support Icon">
+            </div>
+            <h3>Chat Support</h3>
+            <p>Receive instant answers to your questions with no waiting time required.</p>
+        </div>
+    </div>
+</section>
+<div class="promotion-section">
+    <!-- Left Side -->
+    <div class="promo-left">
+      <h2>Limited-time <br>Savings  on Hot <br>Items</h2>
+      <a href="shop.html">
+        <button class="shop-now">SHOP NOW</button>
+      </a>
+    </div>
+    
+    <!-- Right Side -->
+    <div class="promo-right">
+      <div class="slideshow">
+        <div class="slide">
+            <div class="item-box">
+                <a href="link1.html">
+                    <img src="https://i5.walmartimages.com/asr/8494140b-d898-4099-8818-ee172f5dcb68.fa88e16f8ff7471a2f5e0c8b6c2e558b.jpeg" alt="Item 1">
+                </a>
+              <p>Sports bra</p>
+              <p>Rs 4100</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="item-box">
+                  <a href="link1.html">
+                <img src="https://th.bing.com/th/id/R.754643d98a4fcc7e0faa55da3f17335c?rik=b5qyoYvwZbRHZw&riu=http%3a%2f%2ffab-fashions.com%2fwp-content%2fuploads%2f2013%2f12%2fUnique-Black-Cocktail-Dresses.jpg&ehk=%2f1Pyra5wg3O8KztdGhGX5H%2f6rD8BP6e3GspUZmgm418%3d&risl=&pid=ImgRaw&r=0" alt="Item 1">
+            </a>
+                <p>Black co dress</p>
+                <p>Rs 4000</p>
+              </div>
+          </div>
+          <div class="slide">
+              <div class="item-box">
+                  <a href="link1.html">
+                <img src="https://th.bing.com/th/id/OIP.3QtOpfECXOa_AztxtNLRwwAAAA?rs=1&pid=ImgDetMain" alt="Item 1">
+            </a>
+            <p>Black gym suit</p>
+                <p>Rs 3900</p>
+              </div>
+          </div>
+          <div class="slide">
+              <div class="item-box">
+                  <a href="link1.html">
+                <img src="https://th.bing.com/th/id/OIP.s2dBrTFFnpXN7MIirJ9YDQHaLH?pid=ImgDet&w=194&h=291&c=7&dpr=1.6" alt="Item 1">
+            </a>
+            <p>Black Zipper hoddie</p>
+                <p>Rs 3500</p>
+              </div>
+          </div>
+        <div class="slide">
+            <div class="item-box">
+                <a href="link2.html">
+              <img src="https://th.bing.com/th/id/OIP.49bLcNYukMW_-buCe1NodAAAAA?w=474&h=573&rs=1&pid=ImgDetMain" alt="Item 2">
+            </a>
+           <p> Shorts with top</p>
+              <p>Rs 4500</p>
+            </div>
+        </div>
+        <!-- Add more items if needed -->
+      </div>
+    </div>
+  </div>
+  
+  <section style="background-color: white; padding: 40px 0;">
+    <div style="background-color: grey; display: flex; justify-content: space-between; align-items: center; padding: 20px; max-width: 1200px; margin: 0 auto;">
+        <div style="flex: 1; padding-right: 20px;">
+            <img src="https://th.bing.com/th/id/R.0bce97bad3068ba8b8b0df72f06e6d40?rik=TXGOCEdqG1GozA&pid=ImgRaw&r=0" alt="Fashion Image" style="width: 100%; border-radius: 8px;">
+        </div>
+        <div style="flex: 1; padding-left: 20px; color: white;">
+            <h2>Fashion Pieces <br> Designed for <br>Every Occasion</h2>
+            
+            <p>
+                From elegant dresses and sharp suits <br> to  comfortable loungewear and trendy <br> accessories, 
+                each piece is crafted with <br>attention to detail and the latest. <br>
+            
+            
+                Elevate your style effortlessly  and make <br>a statement wherever you go with our <br> versatile 
+                and chic fashion pieces. Shop now <br>and find your perfect outfit for every moment.
+            </p>
+            <div class="bton">
+            <a href="shop.html" >SHOP NOW</a></div>
+        </div>
+    </div>
+</section>
+<div id="product-section" class="product-section">
+    <div class="product-details">
+      <h2>Shorts With <br> Top</h2>
+      <p>Rs. 4,000.00</p>
+    
+      <p>Experience a harmonious blend of premium <br>sound quality and ergonomic design that allows.</p>
+      
+      <div class="product-size">
+        <strong>Size</strong>
+        <ul>
+          <li>S</li>
+          <li>M</li>
+          <li>L</li>
+          <li>XL</li>
+        </ul>
+    </div>
+    
+    <div class="product-imagemobile">
+        <img src="shorts top mobile.jpg" alt="Shorts With Top" />
+      </div>
+    <div class="product-color">
+        <strong>Color</strong>
+        <div class="color-swatch-container">
+            <div class="color-swatch" style="background-color: black;"></div>
+            <div class="color-swatch" style="background-color: #8563A6;"></div>
+            <div class="color-swatch" style="background-color: #7BA05B;"></div>
+          <div class="color-swatch" style="background-color: #005F6B;"></div>
+          <div class="color-swatch" style="background-color: #FAD02E;"></div>
+        </div>
+      </div>
+      
+      
+  
+      <div class="product-info-container">
+       
+      
+        <div class="availability">
+          <strong>Pickup available at</strong>
+          <p>Usually ready in 24 hours</p>
+          <a href="#">Check availability at other stores</a>
+        </div>
+      
+        <p><strong>Need help?</strong></p>
+      </div>
+      
+  
+      <div class="action-buttons">
+        <button class="add-to-cart">Add to cart</button>
+        <button class="buy-now">Buy it now</button>
+      </div>
+  
+      <ul class="additional-info">
+        <li>Instant shipping</li>
+        <li>30-day returns</li>
+        <li>Secure purchase</li>
+      </ul>
+    </div>
+    <div class="product-image">
+      <img src="shorts top.jpg" alt="Shorts With Top" />
+    </div>
+  </div>
+  
+
+
+
+  <div class="happy-customers">
+    <h2>HAPPY CUSTOMERS</h2>
+    <p>Discover why our customers love shopping with us! Read through genuine reviews and testimonials <br> from people who have experienced our products and services firsthand.</p>
+    
+    <div class="review-container">
+        <div class="review">
+            <div class="review-header">
+                <img src="https://th.bing.com/th/id/R.368973ed63fa8a1817e781bdf007169c?rik=g5CKYMpK9ChA%2fQ&pid=ImgRaw&r=0" alt="Customer 2" class="customer-icon">
+                <h3>Jane Smith</h3>
+            </div>
+        
+            <div class="review-content">
+                <div class="stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+        
+                <h2>Very Attractive</h2>
+                <p>I was struggling with the H1 heading tag sequence for product pages, so I contacted support and after a few days of reviewing this, they fixed it. I thought it wouldn't be possible but they did it. 100% recommended.</p>
+            </div>
+        </div>
+        
+
+        <div class="review">
+            <div class="review-header">
+                <img src="https://th.bing.com/th/id/OIP.bwIyr9m7d-5M__GuzTAPSwHaHa?pid=ImgDet&w=194&h=194&c=7&dpr=1.6" alt="Customer 2" class="customer-icon">
+                <h3>Jane Doe</h3>
+            </div>
+        
+            <div class="review-content">
+                <div class="stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+        
+                <h2>Best Quality Fabric</h2>
+                <p>I was struggling with the H1 heading tag sequence for product pages, so I contacted support and after a few days of reviewing this, they fixed it. I thought it wouldn't be possible but they did it. 100% recommended.</p>
+            </div>
+        </div>
+        
+
+        <div class="review">
+            <div class="review-header">
+                <img src="https://th.bing.com/th/id/OIP.X6Emi_uszH1KnF9-uzN9XgHaGo?w=720&h=645&rs=1&pid=ImgDetMain" alt="Customer 2" class="customer-icon">
+                <h3>The Taylors</h3>
+            </div>
+        
+            <div class="review-content">
+                <div class="stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+        
+                <h2>Simple and Elegant</h2>
+                <p>I was struggling with the H1 heading tag sequence for product pages, so I contacted support and after a few days of reviewing this, they fixed it. I thought it wouldn't be possible but they did it. 100% recommended.</p>
+            </div>
+        </div>
+        
+</div>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-column">
+            <div class="logo">
+                <img src="logowhite.png" alt="Finloans Logo">
+                
+                
+            </div>
+        
+    </div>
+    
+    <div class="footer-column">
+            
+        <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Gym 3pc suit</a></li>
+                <li><a href="#">Woman black bra</a></li>
+                <li><a href="#">Brown sando</a></li>
+                <li><a href="#">Black hoddie</a></li>
+                <li><a href="#">Shorts with Top</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Support</h3>
+            <ul>
+                <li><a href="#">Our Location</a></li>
+                <li><a href="#">The Hosts</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Contact Info</h3>
+            <p>Address: 98 West 21th Street, Suite 721 New York NY 10016</p>
+            <p>Phone: (+1) 435 3533</p>
+            <p>Email: info@yourdomain.com</p>
+        </div>
+        
+    </div>
+    <div class="footer-bottom">
+        <p>Copyright © 2024 All rights reserved | This template is made with <span> ❤</span> by Shopify</p>
+        
+        <div class="social-icons">
+            <a href="#"><img src="https://th.bing.com/th/id/R.ac7c4437586fd33b6b0f65925408b0ad?rik=6FfGDRFJujUh8g&riu=http%3a%2f%2fwww.newdesignfile.com%2fpostpic%2f2013%2f01%2ffacebook-icon-black-circle_155320.png&ehk=BuMAJhlSegbPE3BBoW22OQEsHZbMWclvDlUgbZjUMGA%3d&risl=&pid=ImgRaw&r=0" alt="Facebook"></a>
+                <a href="#"><img src="https://th.bing.com/th/id/OIP.9_ZXseiaB1tgYquikdl68AHaFj?w=268&h=200&c=7&r=0&o=5&dpr=1.7&pid=1.7" alt="Instagram"></a>
+                <a href="#"><img src="https://th.bing.com/th/id/OIP.VsqHoEuY7p-i84-_MHWGkAHaHw?rs=1&pid=ImgDetMain" alt="YouTube"></a>
+                <a href="#"><img src="https://th.bing.com/th/id/OIP.Vr8DfHIHQWd3rUGnO20uOgHaHa?w=172&h=180&c=7&r=0&o=5&dpr=1.7&pid=1.7" alt="Twitter"></a>
+                <a href="#"><img src="https://th.bing.com/th/id/OIP.eb41Yo7b_b1DPmvsgGqyPgHaHa?w=162&h=180&c=7&r=0&o=5&dpr=1.7&pid=1.7" alt="Indeed"></a>
+            </div>
+        </div>
+    </div>
+    
+</footer>
+
+
+  <script>
+    // Variables
+    let cartItems = [];
+    let totalPrice = 0;
+
+    // Function to update the cart UI
+    function updateCart() {
+        const cartItemsContainer = document.querySelector('.cart-items');
+        cartItemsContainer.innerHTML = ''; // Clear previous cart items
+
+        cartItems.forEach(item => {
+            // Create cart item element
+            const cartItem = document.createElement('div');
+            cartItem.classList.add('cart-item');
+
+            cartItem.innerHTML = `
+                <img src="${item.img}" alt="${item.name}">
+                <div class="cart-item-info">
+                    <h4>${item.name}</h4>
+                    <p>Rs. ${item.price.toFixed(2)}</p> <!-- Adjusted to use Rs. -->
+                </div>
+            `;
+
+            cartItemsContainer.appendChild(cartItem);
+        });
+
+        // Update total price
+        document.getElementById('cart-total').textContent = `Rs. ${totalPrice.toFixed(2)}`; // Adjusted to use Rs.
+    }
+
+    // Function to handle add to cart
+    function addToCart(event) {
+        // Find the closest product element, whether it’s a deal item or a product section item
+        const productElement = event.target.closest('.deal-item, .product-section'); // Use a comma to target both classes
+        if (!productElement) return; // Exit if no product element is found
+
+        // Retrieve product details
+        const name = productElement.querySelector('h3, h2').innerText; // Adjusted to look for h2 or h3
+        const priceText = productElement.querySelector('p').innerText; // Assumes price is in a <p> tag
+        const price = parseFloat(priceText.replace('Rs. ', '').replace('$', '').replace(',', '').trim()); // Adjusted for your price format
+        const img = productElement.querySelector('img').src;
+
+        // Add item to cart
+        cartItems.push({ name, price, img });
+        totalPrice += price;
+
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        localStorage.setItem('totalPrice', totalPrice);
+        // Update the cart display
+        updateCart();
+    }
+
+    // Variables to toggle cart
+    const cartBtn = document.getElementById('cart-btn');
+    const cartElement = document.querySelector('.cart');
+
+    // Function to toggle cart visibility
+    cartBtn.addEventListener('click', function() {
+        if (cartElement.style.right === '0px') {
+            cartElement.style.right = '-1100px'; // Hide the cart (slide out)
+        } else {
+            cartElement.style.right = '0'; // Show the cart (slide in)
+        }
+    });
+
+    // Function to hide the cart when checkout is clicked
+    document.getElementById('checkout-btn').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevents the default behavior for smooth transition
+        cartElement.style.right = '-1100px'; // Hide the cart (slide out)
+        // Redirect to index.html
+        window.location.href = 'index.html';
+    });
+
+    // Add event listeners to "Add to Cart" buttons for deal items
+    document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+        button.addEventListener('click', addToCart);
+    });
+
+    // Add event listeners to "Add to Cart" buttons for product items
+    document.querySelectorAll('.product-section .add-to-cart').forEach(button => { // Ensure this matches your button class in the product section
+        button.addEventListener('click', addToCart);
+    });
+</script>
+
+
+<script src="script.js"></script>
+    
+</body>
+</html>
